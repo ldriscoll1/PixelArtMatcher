@@ -1,0 +1,20 @@
+-Idea
+- The user draws pixelart on a canvas given a specific prompt
+- Sections
+    - Canvas
+        - The canvas is a 4x4 grid of white squares
+        - User can click on a square to change the color
+        - (Maybe) Smaller canvas is shown to see the drawing from far away?
+        - (Maybe) User can click and drag to change multiple squares ?
+    - Pallete
+        - The Pallete is a 4x4 grid of colored squares
+        - User can click on a square to change the color
+        - The current Square is shown Somewhere
+        - (Maybe) Random colors generated every time
+    - Prompt/Game
+        - The game Flow is as follows
+            1. User is shown a prompt
+            2. The User can click start to start
+            3. Game Starts starting the timer, the canvas and pallete is generated
+            4. Once the timer is up, the canvas becomes unclickable and the pallete is hidden
+            5. The user is able to view their canvas and download a photo of it
