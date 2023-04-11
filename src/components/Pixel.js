@@ -16,7 +16,7 @@ export default function Pixel({X,Y,PixelSize, isVisible, isClickable, selectedCo
     border-style: solid;
     border-color: grey;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
+    margin: 5 auto;
     width: ${PixelSize}px;
     height: ${PixelSize}px;
     text-align: center;

@@ -13,8 +13,21 @@
         - (Maybe) Random colors generated every time
     - Prompt/Game
         - The game Flow is as follows
-            1. User is shown a prompt
+            1. User is shown an image and they have to recreate it
             2. The User can click start to start
             3. Game Starts starting the timer, the canvas and pallete is generated
             4. Once the timer is up, the canvas becomes unclickable and the pallete is hidden
             5. The user is able to view their canvas and download a photo of it
+
+
+
+
+Work Left
+- GameFlow
+    - timer
+    - Start Button with Prompt and Premade Canvas
+    - End Screen with Premade and UserMade Canvas and Score
+- Styling
+    - Mobile Mode
+    - Desktop Mode
+    - Make sure sizing works and scales
