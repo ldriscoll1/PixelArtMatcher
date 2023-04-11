@@ -5,7 +5,7 @@ import PremadeCanvas from "./components/PremadeCanvas";
 import Pallete from "./components/Pallete";
 export default function App() {
     //The colors of the rainbow plus black and white 
-    const [colors, setColors] = useState(["#ff0000", "#ffa500", "#ffff00", "#008000", "#0000ff", "#4b0082", "#ee82ee", "#000000", "#ffffff"]);
+    const [colors, setColors] = useState(["#ff0000", "#ffa500", "#ffff00", "#008000", "#0000ff", "#4b0082", "#ee82ee", "#000", "#ffffff"]);
     const [selectedColor, setSelectedColor] = useState("#000");
     const premadeCanvasses = {"Snake":[
         [
@@ -746,12 +746,22 @@ export default function App() {
             "#000"
         ]
     ]};
+    //Get random canvas
+    function getRandomCanvas(){
+        let keys = Object.keys(premadeCanvasses);
+        let randomKey = keys[Math.floor(Math.random() * keys.length)];
+        return premadeCanvasses[randomKey];
+    }
+    
+    //Gameflow
+    //1. Select premade canvas
+    let premadeCanvas = getRandomCanvas();
+    const [currentCanvas, setCurrentCanvas] = useState(premadeCanvas);
     return (
         <div className="App">
-            <Canvas width = {8} height = {8} pixelSize = {40} selectedColor = {selectedColor}/>
-            <PremadeCanvas premadeCanvas = {premadeCanvasses.Chicken} width = {8} height = {8} pixelSize = {40} setSelectedColor = {setSelectedColor}/>
+            <Canvas premadeCanvas = {currentCanvas} width = {8} height = {8} pixelSize = {40} selectedColor = {selectedColor}/>
+            <PremadeCanvas premadeCanvas = {currentCanvas} width = {8} height = {8} pixelSize = {40} setSelectedColor = {setSelectedColor}/>
             <Pallete colors = {colors} setSelectedColor = {setSelectedColor}/>
-            
         </div>
         );
 } 

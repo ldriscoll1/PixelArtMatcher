@@ -21,14 +21,12 @@ export default function Pixel({X,Y,PixelSize, isVisible, isClickable, selectedCo
     height: ${PixelSize}px;
     text-align: center;
     cursor: pointer;
-    transition: transform 0.1s ease-in;
+    ${isClickable && `transition: transform 0.1s ease-in;
     &:hover {
         transform: scale(1.03);
-    }
+    }`}
 `;
-    function PerformClickAction(e){
-
-        e.preventDefault();
+    function PerformClickAction(){
         if(isClickable === true){
             //Update the color of the Button
             setColor(selectedColor);

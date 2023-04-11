@@ -9,12 +9,13 @@ import Pixel from "./Pixel";
 // height: The height of the canvas
 // pixelSize: The size of each pixel
 // onPixelClick: The function that is called when the pixel is clicked
-export default function Canvas({ width, height, pixelSize, selectedColor}) {
+export default function Canvas({ width, height, pixelSize, selectedColor, premadeCanvas}) {
     const [pixelColors, setPixelColors] = useState(() => {
         const initialPixelColors = [];
         for (let i = 0; i < height; i++) {
             let row = [];
             for (let j = 0; j < width; j++) {
+                //Make the initial color transparent
                 row.push("#000");
             }
             initialPixelColors.push(row);
@@ -25,18 +26,26 @@ export default function Canvas({ width, height, pixelSize, selectedColor}) {
         let newPixelColors = pixelColors;
         newPixelColors[X][Y] = color;
         setPixelColors(newPixelColors);
-        printCanvas();
     }
-    function printCanvas(){
-        console.log(pixelColors);
+    function compareCanvas(){
+        let score = 64;
+        for (let i = 0; i < height; i++) {
+            for (let j = 0; j < width; j++) {
+                if (pixelColors[i][j] !== premadeCanvas[i][j]){
+                    score--;
+                }
+            }
+        }
+        console.log(score);
+        return score;
     }
     // Styled component that represents the canvas which is a grid of pixels
     const Canvas = styled.div`
         display: grid;
-        grid-template-columns: repeat(${width}, 10px);
-        grid-template-rows: repeat(${height}, 10px);
+        grid-template-columns: repeat(${width}, 5px);
+        grid-template-rows: repeat(${height}, 5px);
         grid-gap: ${pixelSize}px;
-        background-color: #000;
+        background-color: #808080;
         width: ${width * (pixelSize + pixelSize/2)}px;
         height: ${height * (pixelSize + pixelSize/2)}px;
     `;
@@ -54,8 +63,12 @@ export default function Canvas({ width, height, pixelSize, selectedColor}) {
         return pixels;
     }
     return (
-        <Canvas className="Canvas">
+        <Canvas className="Canvas" >
             {generatePixels()}
+            <h1>
+                {/* Format as Percent */}
+                {'Score: '+ Math.floor(compareCanvas() / 64 * 100) + '%'}
+            </h1>
         </Canvas>
         );
 }

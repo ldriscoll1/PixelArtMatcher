@@ -16,12 +16,13 @@ export default function PreMadeCanvas({ width, height, pixelSize, selectedColor,
         newPixelColors[X][Y] = color;
         setPixelColors(newPixelColors);
     }
+    
     // Styled component that represents the canvas which is a grid of pixels
     const Canvas = styled.div`
         display: grid;
-        grid-template-columns: repeat(${width}, 10px);
-        grid-template-rows: repeat(${height}, 10px);
-        grid-gap: ${pixelSize/2}px;
+        grid-template-columns: repeat(${width}, 0px);
+        grid-template-rows: repeat(${height}, 0px);
+        grid-gap: ${pixelSize}px;
         background-color: #000;
         width: ${width * (pixelSize + pixelSize/2)}px;
         height: ${height * (pixelSize + pixelSize/2)}px;
