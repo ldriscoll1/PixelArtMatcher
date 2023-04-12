@@ -78,4 +78,10 @@ body {
     align-items: center;
     height: 100%;
     width: 100%;
+    text-align: center;
+}
+@media screen and (width < 650px) {
+    .Rows{
+        flex-direction: column;
+    }
 }
