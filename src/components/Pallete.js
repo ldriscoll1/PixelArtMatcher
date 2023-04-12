@@ -7,15 +7,16 @@ import ColorPicker from "./ColorPicker";
 // colors: The colors of the buttons
 // onButtonClick: The function that is called when the button is clicked
 export default function Pallete({colors, setSelectedColor}) {
-    // Styled component that represents the pallete
+    // Styled component that represents the pallete 3x3 grid of colorpicker buttons
     const Pallete = styled.div`
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        background-color: #000;
-        width: 100%;
-        height: 100px;
+        display: grid;
+        grid-template-columns: repeat(9, 0px);
+        grid-gap: 50px;
+        width:${50*setSelectedColor.length}}px;
+        justify-content: center;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 1px;
     `;
     // Function that gets the color of the button that was clicked and sends it to the parent component
     // Parameters:

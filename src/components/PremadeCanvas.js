@@ -22,10 +22,10 @@ export default function PreMadeCanvas({ width, height, pixelSize, selectedColor,
         display: grid;
         grid-template-columns: repeat(${width}, 0px);
         grid-template-rows: repeat(${height}, 0px);
-        grid-gap: ${pixelSize}px;
-        background-color: #000;
-        width: ${width * (pixelSize + pixelSize/2)}px;
-        height: ${height * (pixelSize + pixelSize/2)}px;
+        grid-gap: ${pixelSize-2}px;
+        width: ${width * (pixelSize)}px;
+        height: ${height * (pixelSize)}px;
+        margin: 0 auto;
     `;
     // Function that generates a 2D array of Pixels
     // Returns: A 2D array of Pixels

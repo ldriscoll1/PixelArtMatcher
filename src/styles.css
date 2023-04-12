@@ -4,3 +4,78 @@ body {
   margin: 0;
     background-color: rgb(92, 91, 91);
 }
+.Title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+  color: #fff;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.Description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.ActionButton {
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+    background-color: rgb(92, 91, 91);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 10px;
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    cursor: pointer;
+    
+
+}
+.Start_Button:hover {
+    transform: scale(1.01);
+}
+.Centered{
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.Timer{
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.Prompt{
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.Rows{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}

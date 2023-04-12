@@ -10,7 +10,7 @@ import styled from "styled-components";
 // color: The color of the pixel
 export default function Pixel({X,Y,PixelSize, isVisible, isClickable, selectedColor,color, setPixelColor}) {
     const [buttonColor, setColor] = useState(color);
-    const Button = styled.div`
+    const Button = styled.button`
     background-color: ${buttonColor};
     border-radius: 5px;
     border-style: solid;
@@ -20,11 +20,11 @@ export default function Pixel({X,Y,PixelSize, isVisible, isClickable, selectedCo
     width: ${PixelSize}px;
     height: ${PixelSize}px;
     text-align: center;
-    cursor: pointer;
     ${isClickable && `transition: transform 0.1s ease-in;
     &:hover {
         transform: scale(1.03);
-    }`}
+    }
+    cursor: pointer;`}
 `;
     function PerformClickAction(){
         if(isClickable === true){
@@ -34,6 +34,6 @@ export default function Pixel({X,Y,PixelSize, isVisible, isClickable, selectedCo
         }
     }
     return (
-        <Button className={isVisible && "Button-Hidden"} onClick = {PerformClickAction}></Button>
+        <Button tabindex = {isClickable ? 0 : -1} className={isVisible && "Button-Hidden"} onClick = {PerformClickAction}></Button>
         );
 }
